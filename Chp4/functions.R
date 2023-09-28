@@ -41,11 +41,11 @@ sum <- outer_func(3)
 sum(5)
 
 # Lazy Evaluation
-lazy <- function(a, b) {
+my_function <- function(a, b) {
   cat("Inside the function\n")
   return(a)
 }
 
 # Calling the function with lazy evaluation
-result <- my_function(5, outer_func())
+result <- my_function(5, expensive_computation())
 
