@@ -49,3 +49,24 @@ while (count <= 10) {
   print(paste("Count:", count))
   count <- count + 1
 }
+
+# Create a matrix
+matrix_data <- matrix(1:12, nrow = 3)
+
+# Apply the sum function to the columns (MARGIN = 2)
+result <- apply(matrix_data, MARGIN = 2, FUN = mean)
+result
+
+# Create a list
+my_list <- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))
+
+# Apply the sum function to each element of the list
+result <- sapply(my_list, FUN = sum)
+result
+
+# Create a list
+my_list <- list(a = c(1, 2, 3), b = c(4, 5, 6), c = c(7, 8, 9))
+
+# Apply the mean function to each element of the list
+result <- lapply(my_list, FUN = mean)
+result
