@@ -18,7 +18,7 @@ dbListTables(mysqlconnection)
 
 # Executing some SQL queries
 result <- dbSendQuery(mysqlconnection, "Select * from dept") # Query to access all the rows of table
-data_frame = fetch(result,n=5) # fetching the result an converting to dataFrame
+data_frame = fetch(result,n=5) # metadata the result an converting to dataFrame
 print(data_frame) # Printing Data
 
 deletetable <- dbSendQuery(mysqlconnection,"Drop Table dept1")
@@ -26,3 +26,8 @@ deletetable <- dbSendQuery(mysqlconnection,"Drop Table dept1")
 new_data_db <- data.frame(deptno = c(4,5),dname = c("CO","IT"), location = c("Dadar","Virar"))
 dbWriteTable(mysqlconnection,"dept11",new_data_db)
 
+res <- dbReadTable(mysqlconnection,"dept11")
+res
+
+# Closing the DataBase Connection
+dbDisconnect(mysqlconnection)
