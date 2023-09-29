@@ -9,4 +9,10 @@ data1 <- data.frame(
   Science = c(78, 92, 85)
 )
 
-melt_data <- melt(data, id.vars = c("ID","Name"))
+# Melting Data
+melted_data <- melt(data1, id.vars = c("ID","Name"))
+melted_data
+
+# Casting Back
+casted_data <- dcast(melted_data, ID + Name ~ variable, value.var = "value")
+casted_data
